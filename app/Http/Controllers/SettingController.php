@@ -11,7 +11,7 @@ class SettingController extends Controller
 	    	}
 	    	return view('settings.index', compact('settings'));
 	    }
-    	return redirect()->route('home');
+    	return redirect()->route('contacts');
     }
     public function store(Request $request) {
         $validatedData = $request->validate([
