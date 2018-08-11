@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('/contacts', 'ContactController')->middleware('settings');
+
+Route::get('/settings', 'SettingController@index');
+Route::post('/settings', 'SettingController@store');
+Route::put('/settings/{id}', 'SettingController@update');
+Route::patch('/settings/{id}', 'SettingController@update');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
